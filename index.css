@@ -1,0 +1,93 @@
+/* Landing Page Hero Section */
+.hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    /* Fallback color */
+    background-color: var(--header-bg);
+    /* Placeholder for background image */
+    background-image: url('images/background-placeholder.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* Dark overlay */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #ddd;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: #eee;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #0a9396;
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 78, 146, 0.4);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #94d2bd;
+    transform: scale(1.05);
+    color: white;
+}
+
+/* Responsive adjustments for Hero */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 2rem;
+        font-size: 1.2rem;
+    }
+}

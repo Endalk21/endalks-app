@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Us - IOT Campus Advisor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Feedback & Exit</h1>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Have you finished getting the information you needed?</h2>
+            <div style="margin: 1rem 0;">
+                <button class="btn" onclick="document.getElementById('ratingSection').style.display='block'">Yes, I'm
+                    done</button>
+                <button class="btn" onclick="window.location.href='main_menu.html'" style="background-color: #666;">No,
+                    take me back</button>
+            </div>
+        </section>
+
+        <form id="ratingSection" style="display: none; margin-top: 2rem;">
+            <h2>Please Rate Our Program</h2>
+            <p>On a scale of 1 to 10</p>
+
+            <input type="number" id="rating" min="1" max="10" required placeholder="10">
+
+            <button type="submit" class="btn">Submit & Logout</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hawassa University IOT Campus</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="rating.js"></script>
+</body>
+
+</html>

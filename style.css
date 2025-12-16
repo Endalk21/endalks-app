@@ -1,0 +1,367 @@
+:root {
+  --bg-color: #f4f7f6;
+  --text-color: #333333;
+  --header-bg: #6a9fdb;
+  --header-text: #ffffff;
+  --card-bg: #ffffff;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --btn-bg: #90cbcc;
+  --btn-hover: #94d2bd;
+  --btn-text: #5098aa;
+  --input-bg: #ffffff;
+  --input-border: #ccc;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --header-bg: #1f2933;
+  --card-bg: #1e1e1e;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  --btn-bg: #bb86fc;
+  --btn-hover: #9f6ee5;
+  --btn-text: #121212;
+  --input-bg: #2c2c2c;
+  --input-border: #444;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header & Nav */
+header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 1rem;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--header-text);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content Layout */
+main {
+  flex: 1;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 1rem;
+  max-width: 800px;
+  text-align: center;
+}
+
+/* Forms & Inputs */
+form {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  padding: 0.8rem;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  width: 100%;
+}
+
+button,
+.btn {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--btn-bg);
+
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.5rem;
+}
+
+button:hover,
+.btn:hover {
+  background-color: var(--btn-hover);
+}
+
+/* Cards & Grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  margin-top: auto;
+}
+
+/* Night Mode Toggle */
+.night-mode-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Responsive Design */
+/* Tablet */
+@media (max-width: 768px) {
+  main {
+    padding: 1.5rem;
+  }
+
+  nav {
+    flex-direction: row;
+    /* Still row but might wrap */
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: var(--header-bg);
+    position: absolute;
+    top: 100%;
+    /* Below header */
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .night-mode-toggle {
+    display: none !important;
+    /* Hide fixed toggle on mobile */
+  }
+
+  /* Hide desktop-specific logout button if present, relying on nav item */
+  #logoutBtn {
+    display: none;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: var(--header-text);
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001;
+}
+
+@media (max-width: 480px) {
+  .hamburger {
+    display: block;
+  }
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .mobile-only {
+    display: inline-block;
+    /* or block depending on context */
+  }
+}
+
+/* Landing Page Hero Section */
+.hero {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  /* Fallback color if image is missing - Critical for visibility */
+  background-color: var(--header-bg);
+  background-image: url('images/background-placeholder.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+/* Dark overlay to ensure text readability over image */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black overlay */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  /* Sit on top of overlay */
+  padding: 2rem;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #ddd;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  color: #eee;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #0a9396;
+  /* Consistent with theme or brighter */
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 78, 146, 0.4);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.cta-button:hover {
+  background-color: #94d2bd;
+  transform: scale(1.05);
+  color: white;
+}
+
+/* Responsive adjustments for Hero */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-button {
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+  }
+}

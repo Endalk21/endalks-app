@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Fields - IOT Campus Advisor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Make Your Choices</h1>
+        <nav>
+            <a href="main_menu.html">Main Menu</a>
+        </nav>
+    </header>
+
+    <main>
+        <form id="selectionForm">
+            <h2>Select Your Top 3 Preferences</h2>
+            <p>Please choose different departments for each priority.</p>
+
+            <label for="choice1">1st Choice</label>
+            <select id="choice1" required>
+                <option value="">-- Select Field --</option>
+            </select>
+
+            <label for="choice2">2nd Choice</label>
+            <select id="choice2" required>
+                <option value="">-- Select Field --</option>
+            </select>
+
+            <label for="choice3">3rd Choice</label>
+            <select id="choice3" required>
+                <option value="">-- Select Field --</option>
+            </select>
+
+            <button type="submit" class="btn">Submit Choices</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hawassa University IOT Campus</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="field_selection.js"></script>
+    <script>
+        requireAuth();
+
+        // Populate Options
+        const selects = ['choice1', 'choice2', 'choice3'];
+        // Sort departments alphabetically for better UX
+        const sortedDepts = Object.entries(departments).sort((a, b) => a[1].name.localeCompare(b[1].name));
+
+        selects.forEach(id => {
+            const select = document.getElementById(id);
+            sortedDepts.forEach(([key, dept]) => {
+                const option = document.createElement('option');
+                option.value = key;
+                option.textContent = dept.name;
+                select.appendChild(option);
+            });
+        });
+
+        // Validation Logic: Prevent Duplicates
+        function validateChoices() {
+            const v1 = document.getElementById('choice1').value;
+            const v2 = document.getElementById('choice2').value;
+            const v3 = document.getElementById('choice3').value;
+
+            // If empty (default option), ignore validation for that field until submit
+            if (!v1 || !v2 || !v3) return true;
+
+            if (v1 === v2 || v1 === v3 || v2 === v3) {
+                alert("You must select 3 DIFFERENT fields. Please change your selection.");
+                return false;
+            }
+            return true;
+        }
+
+        document.getElementById('selectionForm').addEventListener('change', () => {
+            // Optional: Real-time visual feedback can be added here
+        });
+
+        document.getElementById('selectionForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            if (!validateChoices()) return; // Re-run validation on submit
+
+            const choices = [
+                document.getElementById('choice1').value,
+                document.getElementById('choice2').value,
+                document.getElementById('choice3').value
+            ];
+
+            // Save to Current User in LocalStorage
+            const currentUser = getCurrentUser();
+            let users = JSON.parse(localStorage.getItem('users')) || {};
+
+            if (users[currentUser.id]) {
+                users[currentUser.id].choices = choices;
+                localStorage.setItem('users', JSON.stringify(users));
+                alert("Choices saved successfully!");
+                window.location.href = 'main_menu.html';
+            } else {
+                alert("User session error. Please login again.");
+                logout();
+            }
+        });
+    </script>
+</body>
+
+</html>

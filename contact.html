@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - IOT Campus Field Advisor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card" style="margin-bottom: 2rem;">
+            <h2>Get in Touch</h2>
+            <p><strong>Hawassa University IOT Campus</strong></p>
+            <p>📍 Hawassa, Ethiopia</p>
+            <p>📧 info@hu-iot.edu.et</p>
+            <p>📞 +251 46 220 XXXX</p>
+        </section>
+
+        <form id="contactForm" onsubmit="event.preventDefault(); alert('Message sent!');">
+            <h2>Send us a Message</h2>
+
+            <label for="name">Name</label>
+            <input type="text" id="name" required placeholder="Your Name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" required placeholder="Your Email">
+
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" required placeholder="How can we help?"></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </main>
+
+   
+    </form>
+
+    <footer>
+        <p>&copy; 2024 Hawassa University IOT Campus</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="contact.js"></script>
+</body>
+
+</html>

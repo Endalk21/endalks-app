@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Detail - IOT Campus Advisor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="department.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="deptName">Department Loading...</h1>
+        <nav>
+            <button class="btn" style="background: transparent; border: 1px solid white;"
+                onclick="history.back()">Back</button>
+            <a href="main_menu.html">Main Menu</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- State 1: Selection Menu for Department Contents -->
+        <div id="selectionMenu" class="grid-container">
+            <button class="card btn" style="height: auto; width: 100%; display: block;" onclick="showContent('intro')">
+                <h3>📝 Introduction</h3>
+                <p>What is this field about?</p>
+            </button>
+
+            <button class="card btn" style="height: auto; width: 100%; display: block;"
+                onclick="showContent('background')">
+                <h3>📚 Required Background</h3>
+                <p>What skills do you need?</p>
+            </button>
+
+            <button class="card btn" style="height: auto; width: 100%; display: block;" onclick="showContent('work')">
+                <h3>💼 Workplaces & Salary</h3>
+                <p>Jobs and Earning Potential</p>
+            </button>
+
+            <button class="card btn" style="height: auto; width: 100%; display: block;" onclick="showContent('stats')">
+                <h3>📊 Statistics</h3>
+                <p>Cutting Points & Capacity</p>
+            </button>
+        </div>
+
+        <!-- State 2: Content Display Area -->
+        <div id="infoDisplay" class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2 id="sectionTitle" style="margin:0;">Title</h2>
+                <button class="btn back-to-menu-btn" onclick="showMenu()">↩ Back to Menu</button>
+            </div>
+
+            <div id="sectionContent">
+                <!-- Content injected here -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hawassa University IOT Campus</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="department.js"></script>
+</body>
+
+</html>

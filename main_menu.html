@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu - IOT Campus Advisor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Main Menu</h1>
+        <p>Welcome, <span id="userName">Student</span> (ID: <span id="userId"></span>)</p>
+     
+    </header>
+
+    <main>
+        <section class="grid-container">
+            <a href="informatics.html" class="card" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <h3>💻 Informatics Fields</h3>
+                <p>Explore software and information related departments.</p>
+                <button class="btn">Browse</button>
+            </a>
+
+            <a href="engineering.html" class="card" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <h3>🛠️ Engineering Fields</h3>
+                <p>Explore hardware, construction, and design engineering.</p>
+                <button class="btn">Browse</button>
+            </a>
+
+            <a href="field_selection.html" class="card" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <h3>✅ Ready to Choose</h3>
+                <p>Select your top 3 preferences for placement.</p>
+                <button class="btn">Select Fields</button>
+            </a>
+
+            <a href="rating.html" class="card" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <h3>⭐ Exit & Rate Program</h3>
+                <p>Give us your feedback and log out.</p>
+                <button class="btn">Rate & Exit</button>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hawassa University IOT Campus</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="main_menu.js"></script>
+    <script>
+        requireAuth();
+        const user = getCurrentUser();
+        document.getElementById('userName').textContent = user.name;
+        document.getElementById('userId').textContent = user.id;
+
+        document.getElementById('logoutBtn').addEventListener('click', logout);
+    </script>
+</body>
+
+</html>
