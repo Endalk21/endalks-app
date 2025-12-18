@@ -1,12 +1,12 @@
 const departments = {
     "cs": {
         name: "Computer Science",
-        intro: "Computer Science focuses on the theory of computation and the design of software systems.",
-        background: "Strong math, logic, and problem-solving skills.",
-        workplaces: "Software companies, Banks, Telecom, Startups.",
-        salary: "$$$ High",
-        cutting_points: "2023: 3.5, 2024: 3.6",
-        capacity: "150 Students"
+        intro: "Is the study of computers and computational systems, encompassing both theoretical studies and practical applications in software and hardware development.",
+        background: "Strong analytical and problem-solving skills are crucial. Proficiency in mathematics, algorithms, and programming languages is essential. An understanding of software engineering principles and data structures is also important.",
+        workplaces: "Computer scientists can work in software development companies, research institutions, and various industries requiring computational expertise. Roles include software developers, data scientists, and research analysts.",
+        salary: " Salary: 15,000-20,000 ETB.",
+        cutting_points: "2023: 3.5, 2024: 3.62015: for male 3.37 and for female 1.81, 2016: for male 3.15 and for female 1.72,2017:for male 3.75 female 3.5",
+        capacity: "2015:  50 students, 2016: 210 students"
     },
     "ece": {
         name: "Electrical and Computer Engineering",
@@ -28,21 +28,21 @@ const departments = {
     },
     "is": {
         name: "Information System",
-        intro: "IS focuses on the management of information and business processes using technology.",
-        background: "Business logic, Database, Management.",
-        workplaces: "Banks, Consultancies, Government.",
-        salary: "$$ Medium",
-        cutting_points: "2023: 2.7, 2024: 2.8",
-        capacity: "80 Students"
+        intro: "The Information Systems (IS) Department is essential for harnessing technology to optimize business operations. It focuses on developing, implementing, and maintaining systems that manage data effectively. Key functions include software development, data management, IT support, and network administration. By aligning technology with business goals, the IS Department enhances productivity, ensures data security, and drives innovation, making it a critical component for any organization looking to thrive in the digital age.",
+        background: "Prospective students should have a foundational understanding of computer science, business operations, and data management. Skills in programming, database management, and an understanding of organizational behavior are beneficial..",
+        workplaces: "IS professionals can find opportunities in various sectors, including finance, healthcare, government, and private enterprises. Roles may include system analysts, IT managers, and database administrators. ;",
+        salary: "Salary: 10,000-15,000 ETB.",
+        cutting_points: "2015: for male 2.94 and for female 1.86,     2016:  for male 2.8 and for female 1.8,   2016:for male 3.4 for female 3.1 ",
+        capacity: "2015:  70 students, 2016: 140 students"
     },
     "it": {
         name: "Information Technology",
-        intro: "IT focuses on the maintenance and configuration of computer systems and networks.",
-        background: "Networking, SysAdmin, Support.",
-        workplaces: "IT Support, Network Administration.",
-        salary: "$$ Medium",
-        cutting_points: "2023: 2.6, 2024: 2.7",
-        capacity: "100 Students"
+        intro: "Technology involves the use of computers and telecommunications to store, retrieve, transmit, and manipulate data, often in the context of a business or other enterprise.",
+        background: ": Information Technology involves the use of computers and telecommunications to store, retrieve, transmit, and manipulate data, often in the context of a business or other enterprise..",
+        workplaces: ":  IT professionals are employed across various industries, including telecommunications, banking, and education. Positions such as network engineers, system administrators, and IT support specialists are common. Salaries can vary; for example, network engineers in Ethiopia have competitive compensation, though specific figures may vary.",
+        salary: "Salary: 12,000-16,000 ETB",
+        cutting_points: ": 2015: for male 3.01 and for female 1.77, 2016: for male 2.9 and for female 1.73,2017:for male 3.2 for female 2.7",
+        capacity: "2015: 100 students, 2016: 120 students"
     },
     "cs_daye": {
         name: "Computer Science (Daye Campus)",

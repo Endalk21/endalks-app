@@ -1,6 +1,6 @@
 /* Department Selection Menu */
 #selectionMenu {
-    display: flex;
+   
     /* grid-container class provides grid, but we might want overrides here */
 }
 
@@ -33,3 +33,4 @@
     padding: 0.5rem 1rem;
     background: #666;
 }
+
